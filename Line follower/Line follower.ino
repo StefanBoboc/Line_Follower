@@ -9,17 +9,14 @@ const int m2Enable = 10;
 int m1Speed = 0;
 int m2Speed = 0;
 
- int m1CalibrationSpeed = 180;
- int m2CalibrationSpeed = -200;
-
 unsigned long currentTime;
-int rotationTime = 650;
+int calibrationTime = 10000;
+int rotationTime = 200;
 
 // increase kp’s value and see what happens
 float kp = 4;
 float ki = 0;
 float kd =0;
-
 
 
 int p = 0;
@@ -40,6 +37,7 @@ const int sensorCount = 6;
 int sensorValues[sensorCount];
 int sensors[sensorCount] = {0, 0, 0, 0, 0, 0};
 void setup() {
+  Serial.begin(9600);
 
   // pinMode setup
   pinMode(m11Pin, OUTPUT);
@@ -51,27 +49,8 @@ void setup() {
   
   qtr.setTypeAnalog();
   qtr.setSensorPins((const uint8_t[]){A0, A1, A2, A3, A4, A5}, sensorCount);
-
-  delay(500);
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH); // turn on Arduino's LED to indicate we are in calibration mode
   
-  currentTime = millis();
-  // calibrate the sensor. For maximum grade the line follower should do the movement itself, without human interaction.
-  for (uint16_t i = 0; i < 400; i++)
-  {
-    qtr.calibrate();
-    // do motor movement here, with millis() as to not ruin calibration)
-    setMotorSpeed(m1CalibrationSpeed, m2CalibrationSpeed);
-    if (millis() - currentTime > rotationTime){
-      m1CalibrationSpeed = -m1CalibrationSpeed;
-      m2CalibrationSpeed = -m2CalibrationSpeed;
-      currentTime = millis();      
-    }
-  }
-  digitalWrite(LED_BUILTIN, LOW);
-
-  Serial.begin(9600);
+  calibration();
    
 }
 
@@ -119,6 +98,56 @@ void loop() {
 //  Serial.println(m2Speed);
 //
 //  delay(250);
+}
+
+void calibration(){
+  delay(500);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH); // turn on Arduino's LED to indicate we are in calibration mode
+
+  int m1CalibrationSpeed = 195;
+  int m2CalibrationSpeed = -195;
+
+  unsigned long currentTime;
+  unsigned long calibrateTime = millis();
+  unsigned long lastTime = 0;
+
+
+  bool firstStart = true;
+  
+  while(millis() - calibrateTime < calibrationTime){
+    qtr.calibrate();
+
+    if (firstStart == true){
+      currentTime = millis();
+      
+      setMotorSpeed(m1CalibrationSpeed, m2CalibrationSpeed);
+      Serial.println(firstStart);  
+      Serial.println("asd");  
+      
+      if (currentTime - lastTime > rotationTime-50){
+        firstStart = false;
+        //Serial.println(lastTime)
+        lastTime = 0; 
+      }
+    }
+
+    if (firstStart == false){
+      currentTime = millis();
+      if (currentTime - lastTime > rotationTime*2){
+        m1CalibrationSpeed = -m1CalibrationSpeed;
+        m2CalibrationSpeed = -m2CalibrationSpeed;
+
+        setMotorSpeed(m1CalibrationSpeed, m2CalibrationSpeed);
+
+        lastTime = currentTime;      
+      }
+    }
+    
+
+  }
+
+  digitalWrite(LED_BUILTIN, LOW);
 }
 
 
