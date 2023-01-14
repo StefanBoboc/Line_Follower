@@ -14,7 +14,7 @@ int calibrationTime = 10000;
 int rotationTime = 200;
 
 // increase kp’s value and see what happens
-float kp = 4;
+float kp = 0.74;
 float ki = 0;
 float kd =0;
 
@@ -50,13 +50,14 @@ void setup() {
   qtr.setTypeAnalog();
   qtr.setSensorPins((const uint8_t[]){A0, A1, A2, A3, A4, A5}, sensorCount);
   
+  delay(500);  
   calibration();
    
 }
 
 void loop() {
   // inefficient code, written in loop. You must create separate functions
-  int error = map(qtr.readLineBlack(sensorValues), 0, 5000, -50, 50);
+  int error = map(qtr.readLineBlack(sensorValues), 0, 5000, -255, 255);
 
   p = error;
   i = i + error;
@@ -101,48 +102,59 @@ void loop() {
 }
 
 void calibration(){
-  delay(500);
+
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, HIGH); // turn on Arduino's LED to indicate we are in calibration mode
 
-  int m1CalibrationSpeed = 195;
-  int m2CalibrationSpeed = -195;
+  int m1CalibrationSpeed = 180;
+  int m2CalibrationSpeed = -180;
 
-  unsigned long currentTime;
+  unsigned long currentTime = millis();
   unsigned long calibrateTime = millis();
   unsigned long lastTime = 0;
 
 
   bool firstStart = true;
   
-  while(millis() - calibrateTime < calibrationTime){
+  while(millis() - calibrateTime < 2400){
     qtr.calibrate();
 
     if (firstStart == true){
-      currentTime = millis();
       
-      setMotorSpeed(m1CalibrationSpeed, m2CalibrationSpeed);
-      Serial.println(firstStart);  
-      Serial.println("asd");  
+      setMotorSpeed(180, -180);
       
-      if (currentTime - lastTime > rotationTime-50){
+      if (millis() - currentTime > 750){
+        setMotorSpeed(0, 0);
         firstStart = false;
-        //Serial.println(lastTime)
-        lastTime = 0; 
+        //lastTime = 0; 
+        currentTime = millis();
       }
     }
 
     if (firstStart == false){
-      currentTime = millis();
-      if (currentTime - lastTime > rotationTime*2){
-        m1CalibrationSpeed = -m1CalibrationSpeed;
-        m2CalibrationSpeed = -m2CalibrationSpeed;
-
-        setMotorSpeed(m1CalibrationSpeed, m2CalibrationSpeed);
-
-        lastTime = currentTime;      
+      // currentTime = millis();
+      
+      setMotorSpeed(-180, 180);
+      
+      if (millis() - currentTime > 750){
+        setMotorSpeed(0, 0);
+        firstStart = true;
+        currentTime =millis(); 
       }
     }
+
+    // if (firstStart == false){
+    //   currentTime = millis();
+    //   Serial.println(firstStart);
+    //   if (currentTime - lastTime > 1000){
+    //     m1CalibrationSpeed = -m1CalibrationSpeed;
+    //     m2CalibrationSpeed = -m2CalibrationSpeed;
+
+    //     setMotorSpeed(m1CalibrationSpeed, m2CalibrationSpeed);
+
+    //     lastTime = currentTime;      
+    //   }
+    // }
     
 
   }
