@@ -6,6 +6,8 @@ The project involves making a line follower. The project was carried out togethe
 
 At the presentation of the project, our line follower, out of the three attempts, took the **best time of 21.761 seconds**.
 
+---
+
 ## **Contents**
 TBA
 
