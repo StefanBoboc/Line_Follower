@@ -61,7 +61,7 @@ We started by taking values of just the ***P*** until these values made the car 
 
 ---
 
-## **Video showing our line follower on a test circuit.** [here](https://youtu.be/AiGLdtWanJ4) :construction: - <a id="test_circuit"></a> [:top:](#0)
+## **Video showing our line follower on a test circuit.** :construction: ([here](https://youtu.be/AiGLdtWanJ4)) - <a id="test_circuit"></a> [:top:](#0)
 
 As you can see in the video, our tracker did very well on the winding part of the trail. But, on the straight line section, the car was accelerating like Max Verstappen, but was forgoting to brake, as my colleague Bogdan notes =))
 
@@ -80,7 +80,7 @@ When the sensors in the extremities were registering high error values (i.e. aft
 
 ---
 
-## **Video showing our line follower on the final presentation.** [here](https://youtu.be/Jh95sQ5jw9s) :racing_car: - <a id="final_presentation"></a> [:top:](#0)
+## **Video showing our line follower on the final presentation.** :racing_car: ([here](https://youtu.be/Jh95sQ5jw9s)) - <a id="final_presentation"></a> [:top:](#0)
 
 The first run of the line follower goes well, but the second run it crashes. The curve being much too tight, it leaves the sensor's coverage area. But after a hard kick to the floor, the line follower "shakes himself off" and moves on :joy: On the next two laps, the car slows down way too much in that corner and risks stalling. 
 
