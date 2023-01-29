@@ -1,4 +1,4 @@
-# **Line_Follower**
+# **Line Follower**
 
 This is the final project for the Introduction to Robotics course taken in the 3rd year at the Faculty of Mathematics and Computer Science, University of Bucharest.
 
@@ -9,7 +9,7 @@ At the presentation of the project, our line follower, out of the three attempts
 ---
 
 ## **Contents**  <a id="0"></a>
-- [Technical Task.](#technical_task)
+- [Technical Task.](#technical_task) :hammer_and_wrench:
 - [Components.](#components)  
 - [Pictures of the setup.](#setup_pics)
 - [Process explanation.](#process_explanation)
@@ -18,7 +18,7 @@ At the presentation of the project, our line follower, out of the three attempts
 
 ---
 
-## **Technical Task.** - <a id="technical_task"></a> [:top:](#0)
+## **Technical Task.** :hammer_and_wrench: - <a id="technical_task"></a> [:top:](#0)
 We were given a robotics kit and a starter code base. We had to assemble the machine, use 6 of the QTR-8A's sensors and tune the PID. 
 
 The line follower must complete at least one route lap to pass the exam in a decent time. After that, the final grade is obtained according to certain time thresholds. The desired time was about 25 seconds (an average). 
