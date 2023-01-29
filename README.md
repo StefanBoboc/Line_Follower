@@ -15,6 +15,7 @@ At the presentation of the project, our line follower, out of the three attempts
 - [Process explanation.](#process_explanation) :exploding_head:
 - [Line Follower on a test circuit](#test_circuit) :construction:
 - [Final Presentation](#final_presentation) :racing_car:
+- [Conclusion](#conclusion) :relieved:
 
 ---
 
@@ -87,3 +88,7 @@ The first run of the line follower goes well, but the second run it crashes. The
 We realized that this happened because the base speed of the line follower was left too low and the braking code shown above was slowing it down too much. Because that curve was way too tight, it stopped. In addition we believe that if we had provided some higher error thresholds of the reading of the reflectance sensors, we would have avoided this incident.
 
 ---
+
+## **Conclusion.** :relieved: - <a id="conclusion"></a> [:top:](#0)
+
+There is not much to say. We got in touch with a new area of study and learned something new. We struggled a lot, but overall we really enjoyed it! :robot:
