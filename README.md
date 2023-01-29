@@ -2,7 +2,9 @@
 
 This is the final project for the Introduction to Robotics course taken in the 3rd year at the Faculty of Mathematics and Computer Science, University of Bucharest.
 
-The project involves making a line follower. The project was carried out together with my teammate Bogdan, [*A-Bogdan*](https://github.com/A-Bogdan) on Github ([link](https://github.com/A-Bogdan/Line_Follower) to his repo). 
+The project involves making a line follower. The project was carried out together with my teammate Bogdan, [*A-Bogdan*](https://github.com/A-Bogdan) on Github ([link](https://github.com/A-Bogdan/Line_Follower) to his repo).
+
+Team name: **Liniutzarii** :sunglasses:
 
 At the presentation of the project, our line follower, out of the three attempts, took the **best time of 21.761 seconds**.
 
