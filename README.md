@@ -5,6 +5,7 @@ This is the final project for the Introduction to Robotics course taken in the 3
 The project involves making a line follower. The project was carried out together with my teammate Bogdan, [*A-Bogdan*](https://github.com/A-Bogdan) on Github ([link](https://github.com/A-Bogdan/Line_Follower) to his repo).
 
 Team name: **Liniutzarii** :sunglasses:
+(in free translation but in a funny way: *The Drag Racers*)
 
 At the presentation of the project, our line follower, out of the three attempts, took the **best time of 21.761 seconds**.
 
