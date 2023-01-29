@@ -9,23 +9,23 @@ At the presentation of the project, our line follower, out of the three attempts
 ---
 
 ## **Contents**  <a id="0"></a>
-- [Technical Task.](#technical_task) :hammer_and_wrench:
-- [Components.](#components)  
-- [Pictures of the setup.](#setup_pics)
-- [Process explanation.](#process_explanation)
-- [Line Follower on a test circuit](#test_circuit)
-- [Final Presentation](#final_presentation)
+- [Technical Task.](#technical_task) :clipboard:
+- [Components.](#components) :electric_plug: 
+- [Pictures of the setup.](#setup_pics) :hammer_and_wrench:
+- [Process explanation.](#process_explanation) :exploding_head:
+- [Line Follower on a test circuit](#test_circuit) :construction:
+- [Final Presentation](#final_presentation) :racing_car:
 
 ---
 
-## **Technical Task.** :hammer_and_wrench: - <a id="technical_task"></a> [:top:](#0)
+## **Technical Task.** :clipboard: - <a id="technical_task"></a> [:top:](#0)
 We were given a robotics kit and a starter code base. We had to assemble the machine, use 6 of the QTR-8A's sensors and tune the PID. 
 
 The line follower must complete at least one route lap to pass the exam in a decent time. After that, the final grade is obtained according to certain time thresholds. The desired time was about 25 seconds (an average). 
 
 ---
 
-## **Components.** - <a id="components"></a> [:top:](#0)
+## **Components.** :electric_plug: - <a id="components"></a> [:top:](#0)
 - 1 x Arduino Uno
 - 1 x LiPo battery as a power source 
 - 1 x L293D motor driver
@@ -39,7 +39,7 @@ The line follower must complete at least one route lap to pass the exam in a dec
 
 ---
 
-## **Pictures of the setup.** - <a id="setup_pics"></a> [:top:](#0)
+## **Pictures of the setup.** :hammer_and_wrench: - <a id="setup_pics"></a> [:top:](#0)
 ![schematic_picture]()
 | ![pic1](./pictures/linefollower_pic1.jpeg) | ![pic2](./pictures/linefollower_pic2.jpeg) | 
 |:-------------:|:-------------:|
@@ -47,12 +47,12 @@ The line follower must complete at least one route lap to pass the exam in a dec
 
 ---
 
-## **Picture of the team.**
+## **Picture of the team.** :camera_flash:
 ![pic5](./pictures/linefollower_pic5.jpeg)
 
 ---
 
-## **Process explanation.** ([code](./Line%20follower/Line%20follower.ino)) - <a id="process_explanation"></a> [:top:](#0)
+## **Process explanation.** :exploding_head: ([code](./Line%20follower/Line%20follower.ino)) - <a id="process_explanation"></a> [:top:](#0)
 We implemented a machine calibration functionality for each new start. The calibration is based on the information received from the reflectance sensor. The calibration is performed at each new start because the test environment can be different: the colors intensity can be different or the light intensity in the room can be different. So the car adapts to the conditions it is in.
 
 The PID calibrations were made after repeated testing on the test circuits, and the machine wheels speed is adapted accordingly. 
@@ -61,7 +61,7 @@ We started by taking values of just the ***P*** until these values made the car 
 
 ---
 
-## **Video showing our line follower on a test circuit.** [here](https://youtu.be/AiGLdtWanJ4) - <a id="test_circuit"></a> [:top:](#0)
+## **Video showing our line follower on a test circuit.** [here](https://youtu.be/AiGLdtWanJ4) :construction: - <a id="test_circuit"></a> [:top:](#0)
 
 As you can see in the video, our tracker did very well on the winding part of the trail. But, on the straight line section, the car was accelerating like Max Verstappen, but was forgoting to brake, as my colleague Bogdan notes =))
 
@@ -80,7 +80,7 @@ When the sensors in the extremities were registering high error values (i.e. aft
 
 ---
 
-## **Video showing our line follower on the final presentation.** [here](https://youtu.be/Jh95sQ5jw9s) - <a id="final_presentation"></a> [:top:](#0)
+## **Video showing our line follower on the final presentation.** [here](https://youtu.be/Jh95sQ5jw9s) :racing_car: - <a id="final_presentation"></a> [:top:](#0)
 
 The first run of the line follower goes well, but the second run it crashes. The curve being much too tight, it leaves the sensor's coverage area. But after a hard kick to the floor, the line follower "shakes himself off" and moves on :joy: On the next two laps, the car slows down way too much in that corner and risks stalling. 
 
