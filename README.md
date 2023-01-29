@@ -2,18 +2,22 @@
 
 This is the final project for the Introduction to Robotics course taken in the 3rd year at the Faculty of Mathematics and Computer Science, University of Bucharest.
 
-The project involves making a line follower. The project was carried out together with my teammate Bogdan, [*A-Bogdan*](https://github.com/A-Bogdan) on Github ([link](https://github.com/A-Bogdan/Line_Follower) to the repo of my colleague). 
+The project involves making a line follower. The project was carried out together with my teammate Bogdan, [*A-Bogdan*](https://github.com/A-Bogdan) on Github ([link](https://github.com/A-Bogdan/Line_Follower) to his repo). 
 
 At the presentation of the project, our line follower, out of the three attempts, took the **best time of 21.761 seconds**.
 
 ---
 
-## **Contents**
-TBA
+## **Contents**  <a id="0"></a>
+- [Technical Task.](#technical_task)
+- Homework 2 - [Crosswalk](#hw2)  
+- Homework 3 - [7-Segment Display Controlled by Joystick](#hw3)
+- Homework 4 - [4 Digit 7-Segment Display Controlled by Joystick](#hw4)
+- Homework 5 - [TBA](#hw5)
 
 ---
 
-## **Technical Task.**
+## **Technical Task.** - <a id="technical_task"></a> [:top:](#0)
 We were given a robotics kit and a starter code base. We had to assemble the machine, use 6 of the QTR-8A's sensors and tune the PID. 
 
 The line follower must complete at least one route lap to pass the exam in a decent time. After that, the final grade is obtained according to certain time thresholds. The desired time was about 25 seconds (an average). 
@@ -79,6 +83,6 @@ When the sensors in the extremities were registering high error values (i.e. aft
 
 The first run of the line follower goes well, but the second run it crashes. The curve being much too tight, it leaves the sensor's coverage area. But after a hard kick to the floor, the line follower "shakes himself off" and moves on :joy: On the next two laps, the car slows down way too much in that corner and risks stalling. 
 
-We realized that this happened because the base speed of the line follower was left too low and the braking code shown above was slowing it down too much. Because that curve was way too tight, it stopped. In addition we believe that if we had provided some higher error thresholds of the reading of the refraction sensors, we would have avoided this incident.
+We realized that this happened because the base speed of the line follower was left too low and the braking code shown above was slowing it down too much. Because that curve was way too tight, it stopped. In addition we believe that if we had provided some higher error thresholds of the reading of the reflectance sensors, we would have avoided this incident.
 
 ---
