@@ -44,7 +44,6 @@ The line follower must complete at least one route lap to pass the exam in a dec
 ---
 
 ## **Pictures of the setup.** :hammer_and_wrench: - <a id="setup_pics"></a> [:top:](#0)
-![schematic_picture]()
 | ![pic1](./pictures/linefollower_pic1.jpeg) | ![pic2](./pictures/linefollower_pic2.jpeg) | 
 |:-------------:|:-------------:|
 | ![pic3](./pictures/linefollower_pic3.jpeg) | ![pic4](./pictures/linefollower_pic4.jpeg) |
